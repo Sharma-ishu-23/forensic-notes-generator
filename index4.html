@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forensic Science Notes Generator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background: #020617;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      padding: 40px;
+    }
+
+    input {
+      padding: 12px;
+      width: 260px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .box {
+      margin-top: 25px;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 12px;
+      width: 80%;
+      margin: auto;
+      text-align: left;
+    }
+
+    section {
+      padding: 40px;
+    }
+
+    img {
+      margin-top: 15px;
+      width: 250px;
+      border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      background: #020617;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#features">Features</a>
+  <a href="#about">About</a>
+</nav>
+
+<header>
+  <h1>🔬 Forensic Science Notes Generator</h1>
+  <p>Enter topic and get detailed notes in easy English</p>
+
+  <input type="text" id="topic" placeholder="e.g. DNA, Fingerprints">
+  <button onclick="generateNotes()">Generate</button>
+
+  <div class="box" id="output">
+    <p>Your notes will appear here...</p>
+  </div>
+</header>
+
+<section id="features">
+  <h2>✨ Features</h2>
+  <p>✔ Detailed notes with points</p>
+  <p>✔ Easy English language</p>
+  <p>✔ Forensic science topics</p>
+  <p>✔ Working chatbot support</p>
+</section>
+
+<section id="about">
+  <h2>📘 About</h2>
+  <p>This project helps students revise forensic science topics quickly using detailed notes and chatbot support.</p>
+</section>
+
+<script>
+function generateNotes() {
+  let topic = document.getElementById("topic").value.toLowerCase();
+  let output = document.getElementById("output");
+
+  let notes = "";
+  let image = "";
+
+  if (topic.includes("dna")) {
+    notes = `
+    <h2>🧬 DNA Analysis</h2>
+    <ul>
+      <li>DNA stands for Deoxyribonucleic Acid.</li>
+      <li>It is unique for every individual.</li>
+      <li>Used in criminal identification.</li>
+      <li>Helps match suspects with evidence.</li>
+      <li>Collected from blood, hair, saliva.</li>
+    </ul>`;
+    image = "https://cdn.pixabay.com/photo/2016/11/19/14/00/dna-1838561_1280.jpg";
+  }
+
+  else if (topic.includes("fingerprint")) {
+    notes = `
+    <h2>🖐 Fingerprint Analysis</h2>
+    <ul>
+      <li>Fingerprints are unique patterns on fingers.</li>
+      <li>No two people have the same fingerprints.</li>
+      <li>Used for identifying criminals.</li>
+      <li>Types: Loop, Whorl, Arch.</li>
+      <li>Collected from crime scenes.</li>
+    </ul>`;
+    image = "https://cdn.pixabay.com/photo/2017/01/31/13/14/fingerprint-2024281_1280.png";
+  }
+
+  else if (topic.includes("toxicology")) {
+    notes = `
+    <h2>☠ Forensic Toxicology</h2>
+    <ul>
+      <li>Studies poisons and drugs in the body.</li>
+      <li>Helps find cause of death.</li>
+      <li>Used in murder investigations.</li>
+      <li>Analyzes blood and urine samples.</li>
+      <li>Important in overdose cases.</li>
+    </ul>`;
+    image = "https://cdn.pixabay.com/photo/2016/11/29/06/15/medicine-1867563_1280.jpg";
+  }
+
+  else if (topic.includes("cyber")) {
+    notes = `
+    <h2>💻 Cyber Forensics</h2>
+    <ul>
+      <li>Deals with digital crimes.</li>
+      <li>Investigates hacking and data theft.</li>
+      <li>Recovers deleted files.</li>
+      <li>Analyzes computers and mobile devices.</li>
+      <li>Used in cyber crime cases.</li>
+    </ul>`;
+    image = "https://cdn.pixabay.com/photo/2016/11/29/12/30/hacker-1868672_1280.jpg";
+  }
+
+  else {
+    notes = `
+    <h2>⚠ Topic Not Found</h2>
+    <p>Try topics like DNA, Fingerprint, Toxicology, Cyber Forensics.</p>`;
+    image = "https://cdn.pixabay.com/photo/2017/01/31/13/14/question-mark-2024312_1280.png";
+  }
+
+  output.innerHTML = notes + `<img src="${image}">`;
+}
+</script>
+
+<!-- 🤖 CHATBOT SECTION -->
+<section>
+  <h2>🤖 Chat with AI Bot</h2>
+  <p>Ask anything about Forensic Science</p>
+
+  <iframe
+    src="https://www.chatbase.co/chatbot-iframe/D9-4ZtNmmjqaXsgU6vDOG"
+    width="100%"
+    style="height: 500px; border: none; border-radius: 10px;">
+  </iframe>
+</section>
+
+<footer>
+  <p>© 2026 Forensic Science Project</p>
+</footer>
+
+</body>
+</html>
